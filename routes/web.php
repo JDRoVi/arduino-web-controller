@@ -13,12 +13,14 @@ use App\Http\Controllers\DataController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [DataController::class, 'index_list'])->name('indexlist');
 Route::post('store', [DataController::class, 'store'])->name('store');
-Route::get('index', [DataController::class, 'index'])->name('index');
-Route::get('indexlist', [DataController::class, 'index_list'])->name('indexlist');
-Route::post('store_data', [DataController::class, 'store_data'])->name('store_data');
+
+// Route::post('store', [DataController::class, 'store'])->name('store');
+// Route::get('index', [DataController::class, 'index'])->name('index');
+// Route::get('indexlist', [DataController::class, 'index_list'])->name('indexlist');
+// Route::post('store_data', [DataController::class, 'store_data'])->name('store_data');
 
